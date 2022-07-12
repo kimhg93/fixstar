@@ -1,0 +1,52 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.1'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.fixstar'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+    implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.3'
+    implementation 'org.jsoup:jsoup:1.15.2'
+    implementation 'junit:junit:4.12'
+    implementation 'org.jasypt:jasypt:1.9.2'
+    implementation 'net.sf.json-lib:json-lib:2.4:jdk15'
+    implementation 'com.googlecode.log4jdbc:log4jdbc:1.2'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.13.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.3'
+    implementation 'com.microsoft.sqlserver:mssql-jdbc:10.2.1.jre11'
+    implementation 'mysql:mysql-connector-java:8.0.26'
+    implementation 'org.jasypt:jasypt:1.9.2'
+    implementation 'commons-fileupload:commons-fileupload:1.4'
+
+    compileOnly 'org.projectlombok:lombok'
+    compileOnly 'javax.servlet:javax.servlet-api:3.1.0'
+    compileOnly 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4:1.16'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.slf4j:slf4j-simple:1.7.36'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'net.javacrumbs.json-unit:json-unit-assertj:2.35.0'
+
+}
+
+test {
+    useJUnitPlatform()
+}
+

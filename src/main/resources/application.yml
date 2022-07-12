@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    check-template-location: true
+  default-datasource:
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    jdbc-url: ENC(+FXV272z0tc5sLCMBbHLa+/Z5PNaVQfdMHt/9cw7KllO6qLDWDV2n/ZBYdsZAsHhQQLCA/KjOX9gyz5wcFkUpV3Qk//zyb+ZqkAfmLsDq9WDWxxiyEHAS+Gqz0ezpuf5jpMVMO4UO2adSiBN+8EKxUFm7QHyDoJD)
+    username: ENC(99aYTcCUQz7ZGmTKbaIZltEUBdnhpXvk)
+    password: ENC(OlE7Arc9JHsx1hp6loh3FL8tzoAFU8DN92KNCN0cCe0=)
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
+
+# 변수
+server-host: localhost
