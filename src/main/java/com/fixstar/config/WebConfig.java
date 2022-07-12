@@ -2,7 +2,6 @@ package com.fixstar.config;
 
 import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
 import com.fixstar.Interceptor.SessionInterceptor;
-import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -13,10 +12,9 @@ import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
-import org.springframework.web.servlet.config.annotation.*;
-import org.thymeleaf.spring5.SpringTemplateEngine;
-import org.thymeleaf.templatemode.TemplateMode;
-import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
+import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
@@ -24,20 +22,15 @@ import java.util.Arrays;
 import java.util.List;
 
 @Configuration
-@EnableWebMvc
 @ComponentScan(basePackages = {"com.fixstar.*"})
 public class WebConfig implements WebMvcConfigurer {
 
     // resource 위치 설정 ex)css, js ....
 //    @Override
 //    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//        registry.addResourceHandler("/resources/**");
+//        registry.addResourceHandler("/resources/**")
+//                .addResourceLocations("/resources/");
 //    }
-
-    @Bean
-    public LayoutDialect layoutDialect() {
-        return new LayoutDialect();
-    }
 
     // json MessageConverter
     public MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter() {

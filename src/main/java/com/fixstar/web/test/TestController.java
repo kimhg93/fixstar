@@ -17,6 +17,13 @@ public class TestController extends AbstractController {
         ModelAndView mv = new ModelAndView();
         System.err.println("##################  " + testService.selectTest());
         mv.setViewName("views/test");
+
+        // async function
+        // admin index
+        // -main image upload
+        // -check word
+        // board
+
         return mv;
     }
 }
